@@ -87,7 +87,7 @@ header {
         .header-logo {
             position: relative;
             float: left;
-            width: 300px;
+            width: 10em;
             /*margin: 0.5rem;*/
             text-decoration: none;
         }
@@ -98,14 +98,17 @@ header {
             font-size: 1.6rem;
             background: transparent;
         }
-        /*.header-logo {
+        .header-logo {
             position: relative;
             float: left;
             width: 100px;
-            /*margin: 0.5rem;
+            margin: 0.5rem;
             text-decoration: none;
-        }*/
         }
+        }
+
+
+
 
 header.sticky {
     padding: 5px 100px;
@@ -115,6 +118,104 @@ header.sticky {
     /* Alternativa con gradiente */
     /* background: rgb(101,79,118);
     background: linear-gradient(90deg, rgba(101,79,118,0.9251050762101716) 0%, rgba(20,20,20,0.8214636196275386) 50%); */
+}
+
+/***************************/
+
+/* Menú hamburguesa */
+/* header .header-container{
+    place-content: flex-start;
+} */
+
+/* nav{
+    width: 70%;
+    display: block;
+    place-content: space-between;
+} */
+
+#menu-bar, #menu{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    header.header-container, header.header-container ul, header.header-container ul li{
+        display: inline;
+    }
+
+    header .header-container nav{
+        width: 100%;
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    header.logo{
+        margin:0;
+        padding:0;
+        width: 150px;
+    }
+
+    header.header-container{
+        /* display: flex; */
+        place-content: space-between;
+    }
+
+    #menu-bar:not(:checked) ~ nav{
+        display: none;
+    }
+
+    #menu-bar:checked ~ nav{
+        display: block;
+    }
+
+    #menu{
+        display: block;
+        color: rgba(255, 255, 255, 1);
+        /* background-color: rgba(101, 79, 118,0.5); */
+        font-size: 2em;
+        font-weight: bold;
+        /* border: 3px solid rgba(101, 79, 118,0.5); */
+        border-radius: 0.3em;
+        position: absolute;
+        right: 0.7em;
+        top: 0.7em;
+        z-index: 10000000;
+    }
+
+    #menu:hover{
+        transition: 0.5s;
+        color: rgba(101, 79, 118,1);
+    }
+
+    #menu-close{
+        display: none;
+    }
+
+    #menu-bar:checked ~ label #menu-open{
+        display: none;
+    }
+
+    #menu-bar:checked ~ label #menu-close{
+        display: block;
+    }
+
+    header.header-container nav{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: rgb(20, 20, 20, 0.60);
+        padding-top: 0.5em;
+        padding-right: 1.5em;
+        color: rgba(255, 255, 255, 1);
+    } 
+
+    /* Se supone que esto encoluma los elementos y los alínea hacia la derecha, pero no hubo forma. Me estoy comiendo un detalle que no logro visualizar. (Hasta puse ese background para divisar mejor lo que estoy tocando, quemado lvl1000)*/
+    /* header.header-container nav.header-nav ul li a{
+        background-color: greenyellow;
+        display: block;
+        text-align: right;
+    } */
 }
 
 /* CSS del Article del Main */
@@ -166,6 +267,30 @@ main>article {
     box-shadow: 0 10px 20px 0 rgb(79, 64, 102);
     transition: 0.5s;
 }
+
+@media only screen and (max-width: 600px) {
+    #card-container { 
+            flex-direction: column;
+            flex-wrap: wrap; 
+            align-self: center;
+            }
+        }
+
+    @media only screen and (min-width: 600px) {
+    #card-container { 
+            flex-direction: column;
+            flex-wrap: wrap; 
+            align-self: center;
+            }
+        }
+    
+    @media only screen and (min-width: 1024px) {
+    #card-container { 
+            flex-direction: row;
+            flex-wrap: wrap; 
+            align-self: center;
+            }
+        }
 
 
 /*  CSS del Aside  */
